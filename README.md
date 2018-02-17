@@ -2,6 +2,8 @@
 
 BungeeCordPE is port of BungeeCord for Bukkit. It's better than TransferPacket, because Transfer is more smooth and you can communicate with other servers trough API.
 
+To run this, you must also use BungeeClient, but currently project is not finished. Wait for release 
+
 I accept pull requests if they will have any logic. Other Pull requests will be closed and owner will be banned if he/she spam.<br>
 If there'll be more people making Pull Requests, project will be moved to organization.
 
