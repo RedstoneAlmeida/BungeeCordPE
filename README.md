@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+## BungeeCordPE
 
-You can use the [editor on GitHub](https://github.com/kaliiks/BungeeCordPE/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+BungeeCordPE is port of BungeeCord for Bukkit. It's better than TransferPacket, because Transfer is more smooth and you can communicate with other servers trough API.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I accept pull requests if they will have any logic. Other Pull requests will be closed and owner will be banned if he/she spam.<br>
+If there'll be more people making Pull Requests, project will be moved to organization.
 
-### Markdown
+### TODO
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Here you can find things that are missing in BungeeCordPE or things that already are finished.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+# markdown
+Progress: 30%```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- [x] Socket reply
+- [ ] Events
+- [x] Socket API
+- [ ] Plugins
+- [ ] Transfer
+- [ ] ServerAcceptRequest
+- [ ] Other Packets
+- [ ] Bungee Client
+- [ ] LoginPacket sending
+- [ ] Client Data Handling
+- [ ] Threading (10%)
+- [ ] Composer
+- [ ] PHP Build with SocketUtils
 
-### Jekyll Themes
+For more details contact me on Discord kaliiks#0921
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kaliiks/BungeeCordPE/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble or have question? Open new issue and you get reponse soon as possible.
