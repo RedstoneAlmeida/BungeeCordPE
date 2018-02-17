@@ -14,18 +14,18 @@ Here you can find things that are missing in BungeeCordPE or things that already
 Progress: 30%```
 
 - [x] Socket reply
-- [ ] Events
+- [] Events
 - [x] Socket API
-- [ ] Plugins
-- [ ] Transfer
-- [ ] ServerAcceptRequest
-- [ ] Other Packets
-- [ ] Bungee Client
-- [ ] LoginPacket sending
-- [ ] Client Data Handling
-- [ ] Threading (10%)
-- [ ] Composer
-- [ ] PHP Build with SocketUtils
+- [] Plugins
+- [] Transfer
+- [] ServerAcceptRequest
+- [] Other Packets
+- [] Bungee Client
+- [] LoginPacket sending
+- [] Client Data Handling
+- [] Threading (10%)
+- [] Composer
+- [] PHP Build with SocketUtils
 
 For more details contact me on Discord kaliiks#0921
 
