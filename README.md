@@ -10,18 +10,18 @@ If there'll be more people making Pull Requests, project will be moved to organi
 Here you can find things that are missing in BungeeCordPE or things that already are finished.
 
 - [x] Socket reply
-- [] Events
+- [ ] Events
 - [x] Socket API
-- [] Plugins
-- [] Transfer
-- [] ServerAcceptRequest
-- [] Other Packets
-- [] Bungee Client
-- [] LoginPacket sending
-- [] Client Data Handling
-- [] Threading (10%)
-- [] Composer
-- [] PHP Build with SocketUtils
+- [ ] Plugins
+- [ ] Transfer
+- [ ] ServerAcceptRequest
+- [ ] Other Packets
+- [ ] Bungee Client
+- [ ] LoginPacket sending
+- [ ] Client Data Handling
+- [ ] Threading (10%)
+- [ ] Composer
+- [ ] PHP Build with SocketUtils
 
 For more details contact me on Discord kaliiks#0921
 
