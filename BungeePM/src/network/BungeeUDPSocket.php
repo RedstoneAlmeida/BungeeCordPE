@@ -9,6 +9,7 @@ use BungeePM\network\protocol\{
     DataPacket, PacketInfo
 };
 
+use BungeePM\utils\Color;
 use BungeePM\utils\Logger;
 
 class BungeeUDPSocket
@@ -21,6 +22,11 @@ class BungeeUDPSocket
 
     //TODO: Client.php class
     private $clients = [];
+
+    /**
+     * @var array $socketClients
+     */
+    private $socketClients = [];
 
     /**
      * @var ServerSession[] $servers
@@ -57,6 +63,7 @@ class BungeeUDPSocket
         if(@socket_bind($this->socketResource, $host, $port)){
             socket_setopt($this->socketResource,SOL_SOCKET,  SO_REUSEADDR, 0);
             socket_listen($this->socketResource, 5);
+            socket_set_nonblock($this->socketResource);
         }else{
             Logger::error("Failed to bind socket on that port! PERHAPS SERVER IS ALREADY USING THIS PORT?");
             return;
@@ -113,47 +120,39 @@ class BungeeUDPSocket
         return $this->servers;
     }
 
-    public function readPackets(){
-       $rec = socket_recvfrom($this->socketResource,$buffer, 65535, 0, $address, $port);
-       if($rec){
-           switch(ord($buffer{0})){
-               case PacketInfo::PACKET_PING;
-               $data = [];
-               // :/
-               $pk = new DataPacket($data);
-               break;
-           }
-           $packet = new DataPacket($buffer);
-           $packet->decode();
-           if(!is_array($packet->getData())){
-               return;
-           }
-           $type = $packet->getData()['packetId'];
-           $packet->setType($type);
-           @$data = $packet->getData();
-           if(empty($data['serverId'])){
-               Logger::error("Server ID is not specified in packet data!");
-               return;
-           }
-           switch($type){
-               case PacketInfo::MESSAGE_SEND_PACKET;
-               Logger::log("[Message from " . $packet->getData()['serverId'] . "] " . $packet->getData()['message']);
-               break;
-               case PacketInfo::SERVER_LOGIN_PACKET;
-               $this->addClient($data);
-               break;
-               case PacketInfo::SERVER_DISCONNECT_PACKET;
-               break;
-               case PacketInfo::SERVER_ADD_REQUEST_PACKET;
-               $this->addServerSession($data);
-               break;
-           }
-       }
+    /**
+     * @return mixed
+     */
+    public function listen(){
+       socket_recvfrom($this->socketResource,$buffer, 65535, MSG_WAITALL, $address, $port);
+       //TODO: Compare address with address of other servers/clients.
+       return $buffer;
+    }
+
+    /**
+     * @param string $data
+     */
+    public function write(string $data) : void{
+        socket_write($this->socketResource, $data);
+    }
+
+    public function readMaxBytes(){
 
     }
 
-    public function convertDataToPacket(){
-        //TODO: Move back from readPackets()
+    public function acceptConnection(){
+        if (($sock = socket_accept($this->socketResource)) !== false) {
+            $this->socketClients[count($this->socketClients)+1] = $sock;
+            $message = Color::GREEN . "Logged to central server";
+            socket_write($sock, $message, strlen($message));
+        }
+    }
+
+    /**
+     * Closes the connection
+     */
+    public function close(){
+        return socket_close($this->socketResource);
     }
 
 }

@@ -20,6 +20,10 @@ class ServerSession
      */
     private $password;
 
+    /**
+     * @var array $clientData - Normal data from server (gamemode, level etc)
+     */
+    private $clientData = [];
 
     /**
      * ServerSession constructor.
@@ -27,6 +31,7 @@ class ServerSession
      */
     public function __construct(array $serverData)
     {
+        $this->clientData = $serverData['clientData'];
         $this->serverId = $serverData['serverId'];
         $this->playerCount = $serverData['playerCount'];
         $this->password = $serverData['password'];
@@ -51,6 +56,13 @@ class ServerSession
      */
     public function getId() : int{
         return $this->serverId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getClientData() : array{
+        return $this->clientData;
     }
 
 

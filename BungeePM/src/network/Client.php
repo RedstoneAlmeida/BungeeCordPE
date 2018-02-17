@@ -21,7 +21,6 @@ class Client
      */
     public $username;
 
-
     /**
      * Client constructor.
      * @param string $username
@@ -33,15 +32,6 @@ class Client
          $this->ip = $clientHost;
          $this->username = $username;
          $this->port = $clientPort;
-    }
-
-    public function connect(){
-        //TODO: Send LoginPacket
-
-    }
-
-    public function close(){
-        //TODO: Send DisconnectPacket
     }
 
 }

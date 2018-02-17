@@ -13,6 +13,11 @@ class BungeePE{
     private $socket;
 
     /**
+     * @var bool $debugMode
+     */
+    public static $debugMode = true;
+
+    /**
      * BungeePE constructor.
      * @param string $bindIp
      * @param int $bindPort
