@@ -9,10 +9,6 @@ If there'll be more people making Pull Requests, project will be moved to organi
 
 Here you can find things that are missing in BungeeCordPE or things that already are finished.
 
-```
-# markdown
-Progress: 30%```
-
 - [x] Socket reply
 - [] Events
 - [x] Socket API
